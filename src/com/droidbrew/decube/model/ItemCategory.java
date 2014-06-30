@@ -16,9 +16,8 @@ public class ItemCategory {
 		super();
 	}
 
-	public ItemCategory(Integer id, Integer idCat, String item) {
+	public ItemCategory(Integer idCat, String item) {
 		super();
-		this.id = id;
 		this.idCat = idCat;
 		this.item = item;
 	}

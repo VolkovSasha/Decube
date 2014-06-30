@@ -44,8 +44,8 @@ public class DecubeDaoItemSpec {
 
 	@Test
 	public void canBeStoredInDB () {
-		ItemCategory data1 = new ItemCategory(1, 1, "OldContinent");
-		ItemCategory data2 = new ItemCategory(2, 2, "Sandwich");
+		ItemCategory data1 = new ItemCategory(1, "OldContinent");
+		ItemCategory data2 = new ItemCategory(2, "Sandwich");
 		ItemCategory read_data1 = null, read_data2 = null;
 		try {
 			itemDao.create(data1);

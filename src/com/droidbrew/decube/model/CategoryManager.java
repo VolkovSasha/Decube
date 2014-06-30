@@ -5,8 +5,12 @@ import java.util.List;
 
 import com.j256.ormlite.dao.Dao;
 
-public class CaregoryManager {
+public class CategoryManager {
 	private Dao<Category, Integer> categoryDao = null;
+	
+	public Dao<Category, Integer> getCategoryDao() {
+		return categoryDao;
+	}
 
 	public void setDataCategoryDao(Dao<Category, Integer> dataDao) {
 		this.categoryDao = dataDao;
@@ -16,7 +20,7 @@ public class CaregoryManager {
 		return categoryDao.queryForAll();
 	}
 
-	public CaregoryManager() {
+	public CategoryManager() {
 		super();
 	}
 

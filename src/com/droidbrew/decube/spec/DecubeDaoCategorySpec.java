@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.droidbrew.decube.model.Category;
-import com.droidbrew.decube.model.CaregoryManager;
+import com.droidbrew.decube.model.CategoryManager;
 import com.droidbrew.decube.spec.db.TestDbHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -44,8 +44,8 @@ public class DecubeDaoCategorySpec {
 
 	@Test
 	public void canBeStoredInDB () {
-		Category data1 = new Category(1, "Hotel");
-		Category data2 = new Category(2, "Food");
+		Category data1 = new Category("Hotel");
+		Category data2 = new Category("Food");
 		Category read_data1 = null, read_data2 = null;
 		try {
 			categoryDao.create(data1);

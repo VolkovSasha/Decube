@@ -11,7 +11,7 @@ import org.junit.Test;
 import android.util.Log;
 
 import com.droidbrew.decube.model.Category;
-import com.droidbrew.decube.model.CaregoryManager;
+import com.droidbrew.decube.model.CategoryManager;
 import com.droidbrew.decube.spec.db.TestDbHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -20,7 +20,7 @@ import com.j256.ormlite.table.TableUtils;
 
 public class DecubeCategoryManagerSpec {
 
-	static CaregoryManager dm = null;
+	static CategoryManager dm = null;
 	static ConnectionSource connectionSource = null;
 	static Dao<Category, Integer> categoryDao = null;
 
@@ -29,7 +29,7 @@ public class DecubeCategoryManagerSpec {
 		connectionSource = new TestDbHelper().getConnectionSource();
 		TableUtils.createTableIfNotExists(connectionSource, Category.class);
 
-		dm = new CaregoryManager();
+		dm = new CategoryManager();
 
 		try {
 			categoryDao = DaoManager.createDao(connectionSource, Category.class);
@@ -49,8 +49,8 @@ public class DecubeCategoryManagerSpec {
 	
 	@Test
 	public void getCategoryDataManager() {
-		Category data1 = new Category(1, "Hotel");
-		Category data2 = new Category(2, "Food");
+		Category data1 = new Category("Hotel");
+		Category data2 = new Category("Food");
 		
 		try {
 			categoryDao.create(data1);
@@ -59,23 +59,6 @@ public class DecubeCategoryManagerSpec {
 			
 			assertEquals("Hotel", dm.getDataCategory().get(0).getCategory());
 			assertEquals("Food", dm.getDataCategory().get(1).getCategory());
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-	public void removeCategoryDataManagerAtId() {
-		Category data1 = new Category(1, "Hotel");
-		Category data2 = new Category(2, "Food");
-		
-		try {
-			categoryDao.create(data1);
-			categoryDao.create(data2);
-			dm.setDataCategoryDao(categoryDao);
-			dm.removeCategoryAtId(data1.getId());
-			dm.removeCategoryAtId(data2.getId());
-			assertEquals(0, dm.getDataCategory().size());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

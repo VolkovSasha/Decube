@@ -12,5 +12,11 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/menu_item_add_item_category"/>
+    
+    <item
+        android:id="@+id/menu_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_settings"/>
 
 </menu>

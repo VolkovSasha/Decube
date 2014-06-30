@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.droidbrew.decube.model.CaregoryManager;
+import com.droidbrew.decube.model.CategoryManager;
 import com.droidbrew.decube.model.Category;
 import com.droidbrew.decube.model.ItemCategory;
 import com.droidbrew.decube.model.ItemManager;
@@ -48,8 +48,8 @@ public class DecubeItemManagerSpec {
 	
 	@Test
 	public void getItemDataManager() {
-		ItemCategory data1 = new ItemCategory(1, 1, "OldContinent");
-		ItemCategory data2 = new ItemCategory(2, 2, "Sandwich");
+		ItemCategory data1 = new ItemCategory(1, "OldContinent");
+		ItemCategory data2 = new ItemCategory(2, "Sandwich");
 		
 		try {
 			itemDao.create(data1);
@@ -58,23 +58,6 @@ public class DecubeItemManagerSpec {
 			
 			assertEquals("OldContinent", im.getDataItem().get(0).getItem());
 			assertEquals("Sandwich", im.getDataItem().get(1).getItem());
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-	public void removeItemDataManagerAtId() {
-		ItemCategory data1 = new ItemCategory(1, 1, "OldContinent");
-		ItemCategory data2 = new ItemCategory(2, 2, "Sandwich");
-		
-		try {
-			itemDao.create(data1);
-			itemDao.create(data2);
-			im.setDataItemDao(itemDao);
-			im.removeItemCategoryAtId(data1.getId());
-			im.removeItemCategoryAtId(data2.getId());
-			assertEquals(0, im.getDataItem().size());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -14,9 +14,8 @@ public class Category {
 		super();
 	}
 
-	public Category(Integer id, String category) {
+	public Category(String category) {
 		super();
-		this.id = id;
 		this.category = category;
 	}
 
