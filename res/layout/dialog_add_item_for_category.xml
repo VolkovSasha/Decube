@@ -37,7 +37,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add new item" />
+            android:text="Add answer" />
 
         <Button
             android:id="@+id/btn_cancel_new_item"

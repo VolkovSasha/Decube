@@ -55,9 +55,10 @@ public class HomeActivity extends FragmentActivity {
 
 	public void addNewCategory() {
 		final EditText category = new EditText(this);
+		category.setHint("Enter a question");
 		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-		dialog.setTitle("Add new category");
-		dialog.setMessage("Add category");
+		dialog.setTitle("Add new question");
+		dialog.setMessage("Add question");
 		dialog.setView(category);
 		dialog.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 			@TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -95,6 +96,8 @@ public class HomeActivity extends FragmentActivity {
 		
 		final Dialog dialog = new Dialog(HomeActivity.this);
 		dialog.setContentView(dlg);
+		dialog.setTitle("Add new answer");
+		etext.setHint("Enter new answer");
 		
 		try {
 			categoryManager = ((DecubeApp)getApplication()).getCategoryManager();
@@ -108,8 +111,6 @@ public class HomeActivity extends FragmentActivity {
 		      @Override
 		      public void onItemSelected(AdapterView<?> parent, View view,
 		          int position, long id) {
-		        // показываем позиция нажатого элемента
-		        Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
 		      }
 		      @Override
 		      public void onNothingSelected(AdapterView<?> arg0) {
@@ -118,18 +119,18 @@ public class HomeActivity extends FragmentActivity {
 		    
 		btnOk.setOnClickListener(new View.OnClickListener() {
 
-			@Override
+			@TargetApi(Build.VERSION_CODES.HONEYCOMB) @Override
 			public void onClick(View v) {
 				if (etext.getText().toString().equals("")) {
 					return;
 				}
-				Log.d("Spinner", "" + spinner.getSelectedItemId());
 				try {
 					itemDao.create(new ItemCategory((int)spinner.getSelectedItemId(),etext.getText()
 							.toString()));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+				catFragment.getActivity().recreate();
 				dialog.dismiss();
 			}
 		});

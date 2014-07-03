@@ -35,11 +35,11 @@ public class DecubeApp extends Application{
 				categoryManager.setDataCategoryDao(categoryDao);
 
 				if(categoryDao.countOf() == 0){
-					categoryDao.create(new Category("Еда"));
-					categoryDao.create(new Category("Транспорт"));
-					categoryDao.create(new Category("Покупка"));
-					categoryDao.create(new Category("Отель"));
-					categoryDao.create(new Category("Веселье"));
+					//categoryDao.create(new Category("Еда"));
+					//categoryDao.create(new Category("Транспорт"));
+					//categoryDao.create(new Category("Покупка"));
+					//categoryDao.create(new Category("Отель"));
+					categoryDao.create(new Category("Which animal buy?"));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -57,11 +57,12 @@ public class DecubeApp extends Application{
 				itemManager.setDataItemDao(itemDao);
 
 				if(itemDao.countOf() == 0){
-					itemDao.create(new ItemCategory(1, "Хлеб"));
-					itemDao.create(new ItemCategory(1, "Суп"));
-					itemDao.create(new ItemCategory(1, "Борщ"));
+					itemDao.create(new ItemCategory(1, "Cat"));
+					itemDao.create(new ItemCategory(1, "dog"));
+					itemDao.create(new ItemCategory(1, "fish"));
+					itemDao.create(new ItemCategory(1, "lion"));
 					
-					itemDao.create(new ItemCategory(2, "Автобус"));
+/*					itemDao.create(new ItemCategory(2, "Автобус"));
 					itemDao.create(new ItemCategory(2, "Велосипед"));
 					itemDao.create(new ItemCategory(2, "Машина"));
 					
@@ -75,7 +76,7 @@ public class DecubeApp extends Application{
 					
 					itemDao.create(new ItemCategory(5, "Кино"));
 					itemDao.create(new ItemCategory(5, "Парк"));
-					itemDao.create(new ItemCategory(5, "Билиард"));
+					itemDao.create(new ItemCategory(5, "Билиард"));*/
 					
 					
 				}

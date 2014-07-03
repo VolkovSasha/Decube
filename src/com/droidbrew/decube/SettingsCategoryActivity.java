@@ -63,7 +63,7 @@ public class SettingsCategoryActivity extends Activity {
 			public boolean onItemLongClick(AdapterView<?> l, View v,
 					int position, final long id) {
 				AlertDialog.Builder dialog = new AlertDialog.Builder(SettingsCategoryActivity.this);
-				dialog.setTitle("Delete ?");
+				dialog.setTitle("Delete question?");
 				dialog.setPositiveButton("Delete", new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {

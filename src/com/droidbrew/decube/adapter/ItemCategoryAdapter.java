@@ -66,8 +66,7 @@ public class ItemCategoryAdapter extends BaseAdapter {
 
 		ItemCategory record = itemCat.get(position);
 
-		viewHolder.tv.setText("" + record.getItem() + " id: "
-				+ record.getId() + " idCat: " + record.getIdCat());
+		viewHolder.tv.setText("" + record.getItem());
 		return view;
 	}
 

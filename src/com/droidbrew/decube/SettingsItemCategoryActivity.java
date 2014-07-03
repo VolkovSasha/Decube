@@ -7,11 +7,9 @@ import com.droidbrew.decube.model.ItemManager;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -51,7 +49,7 @@ public class SettingsItemCategoryActivity extends Activity {
 			public void onItemClick(AdapterView<?> l, View v, int position,
 					final long id) {
 				AlertDialog.Builder dialog = new AlertDialog.Builder(SettingsItemCategoryActivity.this);
-				dialog.setTitle("Delete item ?");
+				dialog.setTitle("Delete answer?");
 				dialog.setPositiveButton("Delete", new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {

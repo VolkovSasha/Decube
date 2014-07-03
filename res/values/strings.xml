@@ -2,10 +2,10 @@
 <resources>
 
     <string name="app_name">Decube</string>
-    <string name="menu_item_add_new_category">Add new category</string>
-    <string name="menu_item_add_item_category">Add item for category</string>
+    <string name="menu_item_add_new_category">Add new question</string>
+    <string name="menu_item_add_item_category">Add new answer</string>
     <string name="menu_item_settings">Settings</string>
     
-    <string name="activity_title_settings_category">Settings for category</string>
+    <string name="activity_title_settings_category">Settings for question</string>
 	
 </resources>

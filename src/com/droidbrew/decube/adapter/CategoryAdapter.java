@@ -66,8 +66,7 @@ public class CategoryAdapter extends BaseAdapter {
 
 		Category record = cat.get(position);
 
-		viewHolder.tv.setText("" + record.getCategory() + ": "
-				+ record.getId());
+		viewHolder.tv.setText("" + record.getCategory());
 		return view;
 	}
 
